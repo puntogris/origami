@@ -11,7 +11,7 @@
 
 <label
 	for="fileInput"
-	class="cursor-pointer rounded border border-slate-950 px-4 py-2 text-sm text-slate-900 hover:bg-slate-50"
+	class="cursor-pointer rounded border border-slate-950 px-5 py-2 text-sm text-slate-900 hover:bg-slate-50"
 >
 	Add more files
 </label>

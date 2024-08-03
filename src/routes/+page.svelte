@@ -1,12 +1,13 @@
 <script lang="ts">
-	import OrigagamiIcon from '$lib/icons/origamiIcon.svelte';
 	import Dropzone from '$lib/components/dropzone.svelte';
 	import FileList from '$lib/components/fileList.svelte';
-	import OutputOptionsSelector from '$lib/components/outputOptionsSelector.svelte';
+	import OutputOptionsSelector from '$lib/components/outputOption.svelte';
 	import HiddenFileInput from '$lib/components/hiddenFileInput.svelte';
 	import type { OutputOptions } from '$lib/utils/outputOptions';
 	import { webpEncode, jpegEncode, webpDefaultOptions, jpegDefaultOptions } from '$lib/encoder';
 	import { loadImage } from '$lib/utils/utils';
+	import Sidebar from '$lib/components/sidebar.svelte';
+	import Button from '$lib/components/button.svelte';
 
 	let selectedFiles: File[] = [];
 	let outputOptions: OutputOptions = { format: 'webp', quality: '80' };
@@ -45,35 +46,23 @@
 	}
 </script>
 
-<svelte:head>
-	<title>origami.puntogris</title>
-</svelte:head>
-
-<div class="container mx-auto flex min-h-screen max-w-5xl flex-col p-6">
-	<header class="flex items-center gap-2">
-		<OrigagamiIcon class="h-7 w-7" />
-		<h1 class="text-2xl font-medium">origami.</h1>
-	</header>
-	<div class="mt-12">
-		{#if selectedFiles.length}
-			<div class="flex gap-12">
-				<div class="flex w-full flex-col gap-6">
+<div class="mt-12 flex h-full grow flex-col">
+	{#if selectedFiles.length}
+		<div class="flex h-full grow gap-12">
+			<div class="flex w-full flex-col gap-6">
+				<div class="flex items-center justify-between">
 					<div class="flex items-center justify-between">
-						<div class="flex items-center justify-between">
-							<HiddenFileInput onFilesSelected={handleFilesSelect} />
-						</div>
-						<button
-							on:click={handleConversionStart}
-							class="rounded-md border border-slate-950 bg-slate-950 px-6 py-2 text-sm text-white hover:bg-slate-900"
-							>Start conversion</button
-						>
+						<HiddenFileInput onFilesSelected={handleFilesSelect} />
 					</div>
-					<FileList files={selectedFiles} onRemove={handleFilesRemove} />
 				</div>
-				<OutputOptionsSelector bind:options={outputOptions} />
+				<FileList files={selectedFiles} onRemove={handleFilesRemove} />
 			</div>
-		{:else}
-			<Dropzone onFilesSelected={(files) => (selectedFiles = files)} />
-		{/if}
-	</div>
+			<Sidebar>
+				<Button on:click={handleConversionStart} class="p-2">Start conversion</Button>
+				<OutputOptionsSelector bind:options={outputOptions} />
+			</Sidebar>
+		</div>
+	{:else}
+		<Dropzone onFilesSelected={(files) => (selectedFiles = files)} />
+	{/if}
 </div>

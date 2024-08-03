@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Dropzone from 'svelte-file-dropzone';
+	import Button from './button.svelte';
 
 	export let onFilesSelected: (file: File[]) => void = () => {};
 
@@ -18,13 +19,11 @@
 	accept="image/*"
 	containerClasses="custom-dropzone"
 >
-	<p class="text-center text-gray-900">Drop files here or click to select them</p>
+	<p class="text-center font-medium text-gray-900">Drop files here or click to select them</p>
 	<p class="mt-2 text-center text-gray-600">
 		Conversion happens on your device so your files never leave your computer
 	</p>
-	<button class="mt-5 rounded bg-slate-950 px-16 py-2 text-sm text-white hover:bg-slate-900"
-		>Select files</button
-	>
+	<Button class="mt-5">Select files</Button>
 </Dropzone>
 
 <style lang="postcss">
