@@ -17,4 +17,14 @@ async function loadImage(src: string) {
 	return ctx.getImageData(0, 0, img.width, img.height);
 }
 
-export { loadImage };
+function getFormatedBytes(bytes: number) {
+	if (bytes < 1024) {
+		return `${bytes} bytes`;
+	}
+	if (bytes < 1024 * 1024) {
+		return `${(bytes / 1024).toFixed(2)} KB`;
+	}
+	return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+}
+
+export { loadImage, getFormatedBytes };

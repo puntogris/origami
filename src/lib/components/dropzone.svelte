@@ -22,11 +22,11 @@
 	<p class="mt-2 text-center text-gray-600">
 		Conversion happens on your device so your files never leave your computer
 	</p>
-	<button class="mt-5 rounded bg-black px-8 py-2 text-sm text-white">Select files</button>
+	<button class="mt-5 rounded bg-black px-16 py-2 text-sm text-white">Select files</button>
 </Dropzone>
 
 <style lang="postcss">
 	:global(.custom-dropzone) {
-		@apply flex flex-col items-center justify-center rounded-xl border border-zinc-300 bg-zinc-50 p-6 sm:px-8 sm:py-16;
+		@apply flex flex-col items-center justify-center rounded-xl border border-zinc-300 bg-zinc-50 px-6 py-20 sm:px-8 sm:py-32;
 	}
 </style>
