@@ -11,13 +11,13 @@
  * limitations under the License.
  */
 import { initEmscriptenModule } from '$lib/utils/encodeUtils';
-import type { EncodeOptions, MozJPEGModule } from './codecs/mozjpeg_enc';
+import type { EncodeOptions, JXLModule } from './codecs/jxl_enc';
 
-let emscriptenModule: Promise<MozJPEGModule>;
+let emscriptenModule: Promise<JXLModule>;
 
 async function init() {
-	const mozjpegEncoder = await import('./codecs/mozjpeg_enc');
-	return initEmscriptenModule(mozjpegEncoder.default);
+	const jxlEncoder = await import('./codecs/jxl_enc');
+	return initEmscriptenModule(jxlEncoder.default);
 }
 
 async function encode(data: ImageData, options: EncodeOptions): Promise<ArrayBuffer> {
@@ -26,9 +26,13 @@ async function encode(data: ImageData, options: EncodeOptions): Promise<ArrayBuf
 	}
 
 	const module = await emscriptenModule;
-	const resultView = module.encode(data.data, data.width, data.height, options);
-	// wasm can’t run on SharedArrayBuffers, so we hard-cast to ArrayBuffer.
-	return resultView.buffer as ArrayBuffer;
+	const result = module.encode(data.data, data.width, data.height, options);
+
+	if (!result) {
+		throw new Error('Encoding error.');
+	}
+
+	return result.buffer;
 }
 
 export { encode };

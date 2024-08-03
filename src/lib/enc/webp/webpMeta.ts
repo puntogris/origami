@@ -1,4 +1,4 @@
-import type { EncodeOptions } from './webp_enc';
+import type { EncodeOptions } from './codecs/webp_enc';
 
 export const label = 'WebP';
 export const mimeType = 'image/webp';

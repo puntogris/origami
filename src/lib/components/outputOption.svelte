@@ -16,6 +16,8 @@
 		>
 			<option selected value="webp">WebP</option>
 			<option value="jpeg">JPEG</option>
+			<option value="avif">AVIF</option>
+			<option value="jxl">JPEG XL</option>
 		</select>
 	</div>
 

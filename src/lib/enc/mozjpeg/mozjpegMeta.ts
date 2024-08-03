@@ -1,5 +1,7 @@
-import type { EncodeOptions } from './mozjpeg_enc';
-import { MozJpegColorSpace } from './mozjpeg_types';
+import type { EncodeOptions } from './codecs/mozjpeg_enc';
+import { MozJpegColorSpace } from './codecs/mozjpeg_types';
+
+export { MozJpegColorSpace };
 
 export const label = 'MozJPEG';
 export const mimeType = 'image/jpeg';

@@ -1,5 +1,7 @@
-import { type EncodeOptions } from '$lib/enc/avif/avif_enc';
-import { AVIFTune } from './avif_types';
+import { type EncodeOptions } from '$lib/enc/avif/codecs/avif_enc';
+import { AVIFTune } from './codecs/avif_types';
+
+export { AVIFTune };
 
 export const label = 'AVIF';
 export const mimeType = 'image/avif';
