@@ -9,7 +9,7 @@
 	<div class="flex flex-col gap-2">
 		<label for="formats" class="text-sm font-medium text-gray-700">Format</label>
 		<select
-			bind:value={options.formats}
+			bind:value={options.format}
 			id="formats"
 			class="w-full rounded-md border border-gray-300 p-2 pe-9 text-sm text-gray-900 focus:border-zinc-500 focus:ring-zinc-500"
 		>

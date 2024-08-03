@@ -1,5 +1,4 @@
 import type { EncodeOptions, MozJPEGModule } from './mozjpeg_enc';
-import { MozJpegColorSpace } from './mozjpeg_types';
 
 let emscriptenModule: Promise<MozJPEGModule>;
 
