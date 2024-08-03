@@ -14,7 +14,15 @@
 	let convertedFiles: { name: string; data: Blob }[] = [];
 
 	function handleFilesSelect(files: File[]) {
-		selectedFiles = [...selectedFiles, ...files];
+		let filesToAdd: File[] = [];
+
+		for (const file of files) {
+			if (!selectedFiles.find((f) => f.name === file.name)) {
+				filesToAdd.push(file);
+			}
+		}
+
+		selectedFiles = [...selectedFiles, ...filesToAdd];
 	}
 
 	function handleFilesRemove(file: File) {
