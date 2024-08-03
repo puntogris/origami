@@ -4,7 +4,7 @@
 	export let options: OutputOptions;
 </script>
 
-<div class="flex w-60 flex-col gap-6 border-l border-zinc-200 pl-10">
+<div class="flex w-72 flex-col gap-4 border-l border-zinc-200 pl-10">
 	<h1 class="font-medium">Output options</h1>
 	<div class="flex flex-col gap-2">
 		<label for="formats" class="text-sm font-medium text-gray-700">Format</label>

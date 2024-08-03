@@ -36,7 +36,7 @@
 							<HiddenFileInput onFilesSelected={handleFilesSelect} />
 						</div>
 						<button
-							class="rounded-md border border-zinc-900 bg-zinc-900 px-6 py-2 text-sm text-white hover:bg-zinc-800"
+							class="rounded-md border border-slate-950 bg-slate-950 px-6 py-2 text-sm text-white hover:bg-slate-900"
 							>Start conversion</button
 						>
 					</div>
