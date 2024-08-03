@@ -9,7 +9,10 @@
 	}
 </script>
 
-<label for="fileInput" class="cursor-pointer rounded-md bg-black px-4 py-2 text-sm text-white">
+<label
+	for="fileInput"
+	class="cursor-pointer rounded-md border border-zinc-800 px-4 py-2 text-sm text-zinc-900 hover:bg-slate-100"
+>
 	Add more files
 </label>
 <input type="file" class="hidden" id="fileInput" multiple on:input={(e) => handleFilesSelect(e)} />

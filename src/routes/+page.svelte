@@ -22,20 +22,28 @@
 	<title>origami.puntogris</title>
 </svelte:head>
 
-<div class="container mx-auto flex min-h-screen max-w-3xl flex-col p-6">
+<div class="container mx-auto flex min-h-screen max-w-5xl flex-col p-6">
 	<header class="flex items-center gap-2">
 		<OrigagamiIcon class="h-7 w-7" />
 		<h1 class="text-2xl font-medium">origami.</h1>
 	</header>
 	<div class="mt-12">
 		{#if selectedFiles.length}
-			<div class="flex flex-col gap-6">
-				<div class="flex items-center justify-between">
-					<HiddenFileInput onFilesSelected={handleFilesSelect} />
-					<OutputOptionsSelector bind:options={outputOptions} />
+			<div class="flex gap-12">
+				<div class="flex w-full flex-col gap-6">
+					<div class="flex items-center justify-between">
+						<div class="flex items-center justify-between">
+							<HiddenFileInput onFilesSelected={handleFilesSelect} />
+						</div>
+						<button
+							class="rounded-md border border-zinc-900 bg-zinc-900 px-6 py-2 text-sm text-white hover:bg-zinc-800"
+							>Start conversion</button
+						>
+					</div>
+
+					<FileList files={selectedFiles} onRemove={handleFilesRemove} />
 				</div>
-				<FileList files={selectedFiles} onRemove={handleFilesRemove} />
-				<button class="rounded-md bg-zinc-900 p-2.5 text-white">Convert</button>
+				<OutputOptionsSelector bind:options={outputOptions} />
 			</div>
 		{:else}
 			<Dropzone onFilesSelected={(files) => (selectedFiles = files)} />
