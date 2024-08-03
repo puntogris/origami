@@ -4,7 +4,7 @@
 	import OutputOptionsSelector from '$lib/components/outputOption.svelte';
 	import HiddenFileInput from '$lib/components/hiddenFileInput.svelte';
 	import type { OutputOptions } from '$lib/utils/outputOptions';
-	import { webpEncode, jpegEncode, webpDefaultOptions, jpegDefaultOptions } from '$lib/encoder';
+	import { webpEncode, jpegEncode, webpDefaultOptions, jpegDefaultOptions } from '$lib/enc/encode';
 	import { loadImage } from '$lib/utils/utils';
 	import Sidebar from '$lib/components/sidebar.svelte';
 	import Button from '$lib/components/button.svelte';
