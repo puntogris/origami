@@ -15,4 +15,11 @@
 >
 	Add more files
 </label>
-<input type="file" class="hidden" id="fileInput" multiple on:input={(e) => handleFilesSelect(e)} />
+<input
+	type="file"
+	accept="image/*"
+	class="hidden"
+	id="fileInput"
+	multiple
+	on:input={(e) => handleFilesSelect(e)}
+/>
