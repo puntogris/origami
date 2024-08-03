@@ -11,7 +11,7 @@
 		<select
 			bind:value={options.formats}
 			id="formats"
-			class="w-full rounded-md border border-gray-300 bg-gray-50 p-2 pe-9 text-sm text-gray-900 focus:border-zinc-500 focus:ring-zinc-500"
+			class="w-full rounded-md border border-gray-300 p-2 pe-9 text-sm text-gray-900 focus:border-zinc-500 focus:ring-zinc-500"
 		>
 			<option selected value="webp">WebP</option>
 			<option value="jpeg">JPEG</option>
@@ -23,7 +23,7 @@
 		<select
 			bind:value={options.quality}
 			id="quality"
-			class="w-full rounded-md border border-gray-300 bg-gray-50 py-2 pe-9 text-sm text-gray-900 focus:border-zinc-500 focus:ring-zinc-500"
+			class="w-full rounded-md border border-gray-300 py-2 pe-9 text-sm text-gray-900 focus:border-zinc-500 focus:ring-zinc-500"
 		>
 			<option value="10">10</option>
 			<option value="20">20</option>
