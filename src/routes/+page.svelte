@@ -2,7 +2,7 @@
 	import Dropzone from '$lib/components/dropzone.svelte';
 	import FileList from '$lib/components/fileList.svelte';
 	import OutputOptionsSelector from '$lib/components/outputOption.svelte';
-	import HiddenFileInput from '$lib/components/hiddenFileInput.svelte';
+	import FileInputButton from '$lib/components/fileInputButton.svelte';
 	import type { OutputOptions } from '$lib/utils/outputOptions';
 	import { webpEncode, jpegEncode, webpDefaultOptions, jpegDefaultOptions } from '$lib/enc/encode';
 	import { loadImage } from '$lib/utils/utils';
@@ -60,7 +60,7 @@
 			<div class="flex w-full flex-col gap-6">
 				<div class="flex items-center justify-between">
 					<div class="flex items-center justify-between">
-						<HiddenFileInput onFilesSelected={handleFilesSelect} />
+						<FileInputButton onFilesSelected={handleFilesSelect} />
 					</div>
 				</div>
 				<FileList files={selectedFiles} onRemove={handleFilesRemove} />
