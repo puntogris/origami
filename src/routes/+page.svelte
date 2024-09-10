@@ -54,7 +54,7 @@
 	}
 </script>
 
-<div class="mt-12 flex h-full grow flex-col">
+<div class="mt-12 flex grow flex-col">
 	{#if selectedFiles.length}
 		<div class="flex h-full grow gap-12">
 			<div class="flex w-full flex-col gap-6">
@@ -71,6 +71,21 @@
 			</Sidebar>
 		</div>
 	{:else}
-		<Dropzone onFilesSelected={(files) => (selectedFiles = files)} />
+		<div class="flex grow flex-col">
+			<Dropzone onFilesSelected={(files) => (selectedFiles = files)} />
+			<footer class="mt-auto flex items-center justify-end gap-2">
+				<a
+					href="https://puntogris.com"
+					target="_blank"
+					class="text-sm text-slate-800 hover:underline">puntogris</a
+				>
+				•
+				<a
+					href="https://github.com/puntogris/origami"
+					target="_blank"
+					class="text-sm text-slate-800 hover:underline">github</a
+				>
+			</footer>
+		</div>
 	{/if}
 </div>

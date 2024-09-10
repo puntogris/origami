@@ -12,7 +12,7 @@
 	class={twMerge(
 		'rounded border p-2 px-5 text-sm',
 		variant === 'solid'
-			? 'border-transparent bg-slate-950 text-white hover:bg-slate-900'
+			? 'border-transparent bg-slate-950 text-white hover:bg-slate-800'
 			: 'border-slate-950 text-slate-950 hover:bg-slate-50',
 		$$props.class
 	)}

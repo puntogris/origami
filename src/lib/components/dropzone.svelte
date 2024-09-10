@@ -28,6 +28,6 @@
 
 <style lang="postcss">
 	:global(.custom-dropzone) {
-		@apply flex flex-col items-center justify-center rounded-xl border border-slate-300 bg-slate-50 px-6 py-20 sm:px-8 sm:py-32;
+		@apply flex flex-col items-center justify-center rounded-xl border border-slate-300 bg-slate-50 px-6 py-20 hover:border-slate-400 sm:px-8 sm:py-32;
 	}
 </style>
